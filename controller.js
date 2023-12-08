@@ -2,7 +2,7 @@ const{ bookings, services} = require('./booking')
 const getAppointment = (id, res) =>{
     try {
       const getBooking =  services.filter((item)=> item.id === parseInt(id) );
-      res.send(getBooking[0]); // 200
+      res.send(getBooking); // 200
     }
     catch(err){
         res.status(404).json({
@@ -12,7 +12,16 @@ const getAppointment = (id, res) =>{
 }
 const getAppointments = (res) =>{
     try {
-        res.send(services)
+        const alreadyExist = new Set();
+        const getServices = []
+        services.forEach((item)=> {
+          if(!alreadyExist.has(item.id)){
+          alreadyExist.add(item.id);
+          getServices.push(item);
+        }
+      }
+        )
+        res.send(getServices)
     }
     catch(err){
         res.status(404).json({
