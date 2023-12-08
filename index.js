@@ -1,6 +1,9 @@
 const express = require('express')
 const app = express()
 var bodyParser = require('body-parser')
+var cors = require('cors')
+ 
+app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.json())
 
@@ -44,4 +47,4 @@ app.post('/api/bookings', async (req, res)=>{
         })
     }
 })
-app.listen(3000)
+app.listen(8080)

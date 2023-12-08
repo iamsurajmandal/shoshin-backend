@@ -1,7 +1,7 @@
-const bookings = require('./booking')
+const{ bookings, services} = require('./booking')
 const getAppointment = (id, res) =>{
     try {
-      const getBooking =  bookings.filter((item)=> item.id === parseInt(id) );
+      const getBooking =  services.filter((item)=> item.id === parseInt(id) );
       res.send(getBooking[0]); // 200
     }
     catch(err){
@@ -12,7 +12,7 @@ const getAppointment = (id, res) =>{
 }
 const getAppointments = (res) =>{
     try {
-        res.send({data:bookings})
+        res.send(services)
     }
     catch(err){
         res.status(404).json({

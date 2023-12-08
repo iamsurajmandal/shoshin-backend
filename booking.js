@@ -1,24 +1,21 @@
-const bookings = [{   
-    "id": 1,
-    "name": "suraj mandal",
-    "apptDate": "23-03-2023",
-    "role":"software engineer",
-    "createdDate": "23-03-2023"
-},
-{   
-    "id": 2,
-    "name": "rishi mandal",
-    "apptDate": "20-03-2023",
-    "role":"software engineer",
-    "createdDate": "23-03-2023"
-},
-{   
-    "id": 3,
-    "name": "mark mandal",
-    "apptDate": "2-03-2023",
-    "role":"AI engineer",
-    "createdDate": "23-03-2023"
-}
+const bookings = []
+const services = [
+    {
+        id: 1,
+        service:"HR "
+    },
+    {
+        id: 2,
+        service:"Marketing  "
+    },
+    {
+        id: 3,
+        service:"Sales "
+    },
+    {
+        id: 4,
+        service:"Tech "
+    }
 ]
 
-module.exports = bookings
+module.exports = {bookings, services}
